@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Message Board</title>
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    <style media="screen">
+      *{
+        font-family: 'Gloria Hallelujah', cursive;
+        width: 95%;
+        margin: auto;
+        padding: auto;
+      }
+      .header{
+        border-bottom: 2px dashed purple;
+        text-align: center;
+      }
+      input{
+        width: 15%;
+        margin-left: 25px;
+      }
+      textarea{
+        margin-left: 25px;
+        width: 35%;
+      }
+      button{
+        width:10%;
+        margin-left: 25px;
+      }
+      .main_body{
+        border-bottom: 2px dashed purple;
+        padding-bottom: 1%;
+      }
+      .second_header{
+        text-align: center;
+      }
+      .comments_posted{
+        width: 70%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Welcome to the message board!</h1>
+    </div>
+    <!-- THIS IS THE ERROR MESSAGE DISPLAY -->
+    <% if( typeof(errors) != undefined) { %>
+	     <% for( var x in errors) { %>
+	        <%= errors[x].messages %>
+	         <% } %>
+        <% } %>
+
+    <div class="main_body">
+      <form class="" action="/postMessages" method="post">
+        <h2>Name:</h2>
+        <input type="text" name="name">
+        <h2>Message:</h2>
+        <textarea name="message" rows="8" cols="80"></textarea>
+        <br>
+        <button type="submit" name="button">Submit</button>
+      </form>
+
+    </div>
+
+    <h1 class="second_header">See some comments, leave some comments...</h1>
+    <!-- //messages posted -->
+    <% for( var x in messages) { %>
+       <p>"<%= messages[x].message %>"</p>
+        <% } %>
+    <div class="second_body">
+      <form class="" action="/comment" method="post">
+        <h2>Name:</h2>
+        <input type="text" name="name">
+        <h2>Message:</h2>
+        <textarea name="name" rows="8" cols="80"></textarea>
+        <br>
+        <a href="/comment"><button type="submit" name="button">Post a Comment</button></a>
+      </form>
+    </div>
+  </body>
+</html>
