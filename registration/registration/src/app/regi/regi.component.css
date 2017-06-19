@@ -1,0 +1,30 @@
+*{
+margin: auto;
+padding: auto;
+
+}
+body{
+  font-family: 'Amatic SC', cursive;
+  margin: 10px;
+  width: 80%;
+  border: 2px dashed green;
+}
+.header{
+  text-align: center
+}
+.form_warning{
+  vertical-align: top;
+  display: inline-block;
+  font-size: 18px;
+}
+.warning{
+  border: 2px dashed purple;
+  vertical-align: top;
+}
+.form_time{
+  padding: 10px;
+  margin: 5px;
+}
+p{
+  margin: 20px;
+}
